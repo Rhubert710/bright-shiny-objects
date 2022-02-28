@@ -2,6 +2,115 @@
 // │ Your code here! │
 // └─────────────────┘
 
+const myFirstName = 'Robert';
+const myLastName = 'Hubert';
+//createUser
+function createUser(firstName, lastName)
+{
+  let user = 
+  {
+      firstName:firstName,
+      lastName:lastName
+  }
+  return user;
+}
+
+let newUser = createUser(myFirstName, myLastName);
+
+//setAge
+function setAge(user, age)
+{
+    user['age'] = age;
+    return user;
+}
+
+setAge(newUser, 31);
+
+//incrementAge
+
+function incrementAge(user)
+{
+    user['age'] += 1;
+    return user;
+}
+
+incrementAge(newUser);
+
+//fixCar
+const myCar = {
+    make: 'Ford',
+    model: 'Mustang',
+    year: 1969,
+    needsMaitenance: true
+};
+
+function fixCar(car)
+{
+    car.needsMaintenance = false;
+    return car;
+}
+
+fixCar(myCar);
+
+//addGrades
+const student = {
+    name: 'Anthony DeRosa',
+    email: 'anthony.derosa@codeimmersives.com',
+    grades: [80, 100, 95]
+};
+
+const newGrades = [88, 70, 90];
+
+function addGrades(student, newGrades)
+{
+    for(let i=0; i<newGrades.length; i++)
+    {
+        student.grades.push(newGrades[i]);
+    }
+    return student;
+}
+
+//getDataType
+
+function getDataType(obj, key)
+{
+    return typeof obj[key];
+}
+
+//addTodo
+function addTodo(todos, newTodo)
+{
+    todos.push(newTodo);
+    return todos;
+}
+
+//addSong
+function addSong(playlist, newSong)
+{
+    playlist.duration += newSong.duration;
+    playlist['songs'].push(newSong);
+
+    return playlist;
+}
+
+//updateReportCard
+function updateReportCard(reportCard, newGrade)
+{
+    reportCard.grades.push(newGrade);
+    reportCard.lowestGrade = Math.min(...reportCard.grades);
+    reportCard.highestGrade = Math.max(...reportCard.grades);
+
+    let sum = 0;
+    for(let grade of reportCard.grades)
+    {
+        sum += grade;
+    }
+
+    reportCard.averageGrade = sum/(reportCard.grades.length);
+
+    return reportCard;
+}
+
 
 
 
